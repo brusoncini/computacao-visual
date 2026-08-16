@@ -10,9 +10,9 @@ O objetivo deste blog é reunir conteúdos, estudos e atividades relacionados ao
 * CSS
 * GitHub Pages
 
-## 🔜 Publicação
+## 👩🏻‍💻 Publicação
 
-O blog será disponibilizado através do **GitHub Pages**.
+O blog está disponível através do [GitHub Pages](https://brusoncini.github.io/computacao-visual/index.html).
 
 ---
 

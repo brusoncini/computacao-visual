@@ -591,6 +591,197 @@ footer p {
     transform: translateX(-3px);
 }
 
+/* -------------------- */
+/* PÁGINA DE POSTS */
+/* -------------------- */
+
+.posts-page {
+    min-height: 80vh;
+
+    padding: 70px 8% 100px;
+}
+
+
+/* CABEÇALHO */
+
+.posts-header {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.posts-header h1 {
+    margin: 18px 0 12px;
+
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 48px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.posts-header p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* ÁREA COM TODOS OS POSTS */
+
+.all-posts {
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* CARD DE POST QUE AINDA NÃO EXISTE */
+
+.post-card-placeholder {
+    opacity: 0.65;
+}
+
+.post-card-placeholder:hover {
+    transform: none;
+
+    box-shadow:
+        0 8px 25px rgba(217, 108, 167, 0.08);
+}
+
+
+/* -------------------- */
+/* PÁGINA SOBRE */
+/* -------------------- */
+
+.about-page {
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 20px 100px;
+}
+
+
+/* CONTAINER PRINCIPAL */
+
+.about-container {
+    width: 100%;
+    max-width: 950px;
+
+    display: grid;
+    grid-template-columns: 260px 1fr;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(217, 108, 167, 0.09);
+}
+
+
+/* -------------------- */
+/* DECORAÇÃO LATERAL */
+/* -------------------- */
+
+.about-decoration {
+    min-height: 520px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(135deg,
+            var(--pink-light),
+            var(--lilac));
+
+    color: white;
+
+    font-size: 90px;
+}
+
+
+/* -------------------- */
+/* CONTEÚDO */
+/* -------------------- */
+
+.about-content {
+    padding: 55px;
+}
+
+.about-content h1 {
+    margin: 20px 0 25px;
+
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 42px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.about-content p {
+    margin: 0 0 20px;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* -------------------- */
+/* DESTAQUE */
+/* -------------------- */
+
+.about-highlight {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding: 22px;
+
+    background-color: var(--pink-light);
+
+    border-radius: 18px;
+}
+
+.about-highlight span {
+    color: var(--pink-dark);
+
+    font-size: 20px;
+}
+
+.about-highlight p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
 
 /* -------------------- */
 /* RESPONSIVIDADE */
@@ -665,6 +856,40 @@ footer p {
 
     .post-body h2 {
         font-size: 24px;
+    }
+
+    .posts-page {
+        padding: 50px 20px 70px;
+    }
+
+    .posts-header {
+        margin-bottom: 40px;
+    }
+
+    .posts-header h1 {
+        font-size: 38px;
+    }
+
+    .about-page {
+        padding: 50px 20px 70px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-decoration {
+        min-height: 180px;
+
+        font-size: 65px;
+    }
+
+    .about-content {
+        padding: 35px 25px;
+    }
+
+    .about-content h1 {
+        font-size: 34px;
     }
 
 }
