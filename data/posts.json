@@ -1,0 +1,20 @@
+[
+    {
+        "id": 2,
+        "titulo": "Olho Humano e Visão",
+        "categoria": "Percepção Visual",
+        "descricao": "Um pouco de como enxergamos luz e cores e reflexões.",
+        "dataPublicacao": "2026-08-16",
+        "icone": "♡",
+        "link": "posts/olho-humano-e-visao.html"
+    },
+    {
+        "id": 1,
+        "titulo": "Computação Visual?",
+        "categoria": "Reflexão",
+        "descricao": "Minhas ideias e primeiras impressões sobre o que é computação visual.",
+        "dataPublicacao": "2026-08-16",
+        "icone": "✦",
+        "link": "posts/o-que-eh.html"
+    }
+]

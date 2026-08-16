@@ -2,7 +2,7 @@
 
 
 /* -------------------- */
-/* CORES */
+/* VARIÁVEIS */
 /* -------------------- */
 
 :root {
@@ -20,6 +20,16 @@
     --text-light: #806d80;
 
     --border: #f1d4e4;
+
+    --gradient: linear-gradient(135deg,
+            var(--pink-light),
+            var(--lilac));
+
+    --shadow:
+        0 8px 25px rgba(217, 108, 167, 0.08);
+
+    --shadow-hover:
+        0 12px 35px rgba(217, 108, 167, 0.15);
 }
 
 
@@ -54,16 +64,8 @@ body {
 }
 
 main {
-    margin: 0;
-    padding: 0;
-
     width: 100%;
 }
-
-
-/* -------------------- */
-/* TÍTULOS */
-/* -------------------- */
 
 h1,
 h2,
@@ -78,7 +80,6 @@ h3 {
 
 header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
@@ -91,8 +92,6 @@ header {
 
 header h1 {
     margin: 0;
-
-    font-family: 'Outfit', sans-serif;
 
     color: var(--pink-dark);
 
@@ -107,7 +106,6 @@ header h1 {
 
 nav {
     display: flex;
-
     gap: 24px;
 }
 
@@ -117,7 +115,6 @@ nav a {
     text-decoration: none;
 
     font-size: 15px;
-    font-weight: 400;
 
     transition: 0.2s;
 }
@@ -132,12 +129,9 @@ nav a:hover {
 /* -------------------- */
 
 .hero {
-    width: 100%;
-
     min-height: 65vh;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
@@ -146,8 +140,19 @@ nav a:hover {
     text-align: center;
 
     padding: 80px 20px;
+}
 
-    background: transparent;
+.hero h2 {
+    max-width: 750px;
+
+    margin: 24px 0 10px;
+
+    font-size: 50px;
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    color: var(--text);
 }
 
 
@@ -159,33 +164,12 @@ nav a:hover {
     padding: 8px 16px;
 
     background-color: var(--pink-light);
-
     color: var(--pink-dark);
 
     border-radius: 30px;
 
     font-size: 14px;
     font-weight: 500;
-}
-
-
-/* -------------------- */
-/* TÍTULO PRINCIPAL */
-/* -------------------- */
-
-.hero h2 {
-    max-width: 750px;
-
-    margin: 24px 0 10px;
-
-    font-family: 'Outfit', sans-serif;
-
-    font-size: 50px;
-    font-weight: 600;
-
-    line-height: 1.15;
-
-    color: var(--text);
 }
 
 
@@ -201,7 +185,6 @@ nav a:hover {
     padding: 12px 26px;
 
     background-color: var(--pink);
-
     color: white;
 
     text-decoration: none;
@@ -222,17 +205,12 @@ nav a:hover {
 
 
 /* -------------------- */
-/* POSTS */
+/* SEÇÃO DE POSTS */
 /* -------------------- */
 
 .posts-section {
     padding: 80px 8%;
 }
-
-
-/* -------------------- */
-/* TÍTULO DOS POSTS */
-/* -------------------- */
 
 .section-title {
     display: flex;
@@ -250,27 +228,28 @@ nav a:hover {
 .section-title h2 {
     margin: 0;
 
-    font-family: 'Outfit', sans-serif;
-
     font-size: 32px;
     font-weight: 600;
 }
 
 
 /* -------------------- */
-/* GRID DOS POSTS */
+/* LISTA DOS POSTS */
 /* -------------------- */
 
 .posts-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
 
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: stretch;
 
     gap: 30px;
 
+    width: 100%;
     max-width: 1200px;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 
@@ -279,16 +258,19 @@ nav a:hover {
 /* -------------------- */
 
 .post-card {
+    width: 100%;
+    max-width: 360px;
+
+    flex: 0 1 360px;
+
     background-color: var(--surface);
 
     border: 1px solid var(--border);
-
     border-radius: 24px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 8px 25px rgba(217, 108, 167, 0.08);
+    box-shadow: var(--shadow);
 
     transition: 0.3s;
 }
@@ -296,8 +278,7 @@ nav a:hover {
 .post-card:hover {
     transform: translateY(-6px);
 
-    box-shadow:
-        0 12px 35px rgba(217, 108, 167, 0.15);
+    box-shadow: var(--shadow-hover);
 }
 
 
@@ -313,14 +294,11 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
-    background:
-        linear-gradient(135deg,
-            var(--pink-light),
-            var(--lilac));
-
-    font-size: 50px;
+    background: var(--gradient);
 
     color: white;
+
+    font-size: 50px;
 }
 
 
@@ -335,38 +313,40 @@ nav a:hover {
 .post-category {
     display: inline-block;
 
+    max-width: 100%;
+
     margin-bottom: 10px;
 
     padding: 6px 12px;
 
     background-color: var(--pink-light);
-
     color: var(--pink-dark);
 
     border-radius: 20px;
 
     font-size: 12px;
     font-weight: 500;
+
+    overflow-wrap: break-word;
 }
 
 .post-content h3 {
     margin: 8px 0 12px;
 
-    font-family: 'Outfit', sans-serif;
-
     font-size: 22px;
     font-weight: 600;
 
     line-height: 1.3;
+
+    overflow-wrap: break-word;
 }
 
 .post-content p {
     color: var(--text-light);
 
-    line-height: 1.6;
-
     font-size: 15px;
-    font-weight: 400;
+
+    line-height: 1.6;
 }
 
 .post-content a {
@@ -409,13 +389,12 @@ footer p {
     margin: 0;
 }
 
+
 /* -------------------- */
 /* PÁGINA DE POST */
 /* -------------------- */
 
 .post-page {
-    width: 100%;
-
     padding: 70px 20px 100px;
 }
 
@@ -426,14 +405,12 @@ footer p {
 }
 
 
-/* -------------------- */
 /* CABEÇALHO DO POST */
-/* -------------------- */
 
 .post-header {
-    text-align: center;
-
     margin-bottom: 40px;
+
+    text-align: center;
 }
 
 .post-header .post-category {
@@ -444,8 +421,6 @@ footer p {
     max-width: 750px;
 
     margin: 10px auto 15px;
-
-    font-family: 'Outfit', sans-serif;
 
     font-size: 46px;
     font-weight: 600;
@@ -464,24 +439,20 @@ footer p {
 }
 
 
-/* -------------------- */
 /* CAPA DO POST */
-/* -------------------- */
 
 .post-cover {
     width: 100%;
     height: 350px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     margin-bottom: 45px;
 
-    background:
-        linear-gradient(135deg,
-            var(--pink-light),
-            var(--lilac));
+    background: var(--gradient);
 
     border: 1px solid var(--border);
     border-radius: 28px;
@@ -492,9 +463,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* CONTEÚDO DO POST */
-/* -------------------- */
 
 .post-body {
     padding: 45px;
@@ -521,8 +490,6 @@ footer p {
 .post-body h2 {
     margin: 42px 0 16px;
 
-    font-family: 'Outfit', sans-serif;
-
     font-size: 27px;
     font-weight: 600;
 
@@ -538,14 +505,14 @@ footer p {
 .post-body li {
     margin-bottom: 10px;
 
-    line-height: 1.7;
-
     color: var(--text);
+
+    line-height: 1.7;
 }
 
 
 /* -------------------- */
-/* DESTAQUE */
+/* DESTAQUE DO POST */
 /* -------------------- */
 
 .post-highlight {
@@ -556,7 +523,6 @@ footer p {
     background-color: var(--pink-light);
 
     border-left: 4px solid var(--pink-dark);
-
     border-radius: 12px;
 
     color: var(--text);
@@ -591,6 +557,7 @@ footer p {
     transform: translateX(-3px);
 }
 
+
 /* -------------------- */
 /* PÁGINA DE POSTS */
 /* -------------------- */
@@ -600,9 +567,6 @@ footer p {
 
     padding: 70px 8% 100px;
 }
-
-
-/* CABEÇALHO */
 
 .posts-header {
     max-width: 700px;
@@ -614,8 +578,6 @@ footer p {
 
 .posts-header h1 {
     margin: 18px 0 12px;
-
-    font-family: 'Outfit', sans-serif;
 
     font-size: 48px;
     font-weight: 600;
@@ -635,27 +597,10 @@ footer p {
     line-height: 1.7;
 }
 
-
-/* ÁREA COM TODOS OS POSTS */
-
 .all-posts {
     max-width: 1200px;
 
     margin: auto;
-}
-
-
-/* CARD DE POST QUE AINDA NÃO EXISTE */
-
-.post-card-placeholder {
-    opacity: 0.65;
-}
-
-.post-card-placeholder:hover {
-    transform: none;
-
-    box-shadow:
-        0 8px 25px rgba(217, 108, 167, 0.08);
 }
 
 
@@ -667,20 +612,19 @@ footer p {
     min-height: 80vh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     padding: 80px 20px 100px;
 }
 
-
-/* CONTAINER PRINCIPAL */
-
 .about-container {
     width: 100%;
     max-width: 950px;
 
     display: grid;
+
     grid-template-columns: 260px 1fr;
 
     background-color: var(--surface);
@@ -695,21 +639,17 @@ footer p {
 }
 
 
-/* -------------------- */
 /* DECORAÇÃO LATERAL */
-/* -------------------- */
 
 .about-decoration {
     min-height: 520px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    background:
-        linear-gradient(135deg,
-            var(--pink-light),
-            var(--lilac));
+    background: var(--gradient);
 
     color: white;
 
@@ -717,9 +657,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* CONTEÚDO */
-/* -------------------- */
 
 .about-content {
     padding: 55px;
@@ -727,8 +665,6 @@ footer p {
 
 .about-content h1 {
     margin: 20px 0 25px;
-
-    font-family: 'Outfit', sans-serif;
 
     font-size: 42px;
     font-weight: 600;
@@ -747,9 +683,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* DESTAQUE */
-/* -------------------- */
 
 .about-highlight {
     display: flex;
@@ -789,10 +723,6 @@ footer p {
 
 @media (max-width: 900px) {
 
-    .posts-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .hero h2 {
         font-size: 40px;
     }
@@ -828,8 +758,10 @@ footer p {
         padding: 60px 20px;
     }
 
-    .posts-grid {
-        grid-template-columns: 1fr;
+    .post-card {
+        max-width: 100%;
+
+        flex-basis: 100%;
     }
 
     .section-title h2 {
