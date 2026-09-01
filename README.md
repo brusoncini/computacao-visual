@@ -30,4 +30,4 @@ O blog está disponível através do [GitHub Pages](https://brusoncini.github.io
 
 ---
 
-Desenvolvido com 💖 para a disciplina de Computação Visual 
+Desenvolvido com 💖
