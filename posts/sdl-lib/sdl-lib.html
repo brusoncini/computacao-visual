@@ -70,7 +70,7 @@
                     tela preta com as configurações estabelecidas.
                 </p>
 
-                <img src="/posts/sdl-lib/img/hello.png">
+                <img src="img/hello.png">
 
 
                 <p>
@@ -82,13 +82,13 @@
                     restante se torna 0. Conseguimos esse resultado:
                 </p>
 
-                <img src="/posts/sdl-lib/img/sdl-renderer.png">
+                <img src="img/sdl-renderer.png">
 
                 <p>
                     Usamos também a biblioteca SDL_image para carregar 3 imagens em diferentes formatos: .bmp, .png e .jpg. Elas são carregadas como texturas, o que quer dizer que não manipulamos diretamente os pixels da imagem. O interessante é que podemos definir o local onde elas aparecem na janela. Como desafio, tentei fazer com que a imagem .jpg se movesse junto com o cursor do mouse.
                 </p>
 
-                <img src="/posts/sdl-lib/img/sdl-image.gif">
+                <img src="img/sdl-image.gif">
 
                 <p>
                     Como o código já possuía <strong>SDL_EVENT_MOUSE_MOTION</strong> com as coordenadas x e y do cursor, para que a imagem ficasse centralizada, defini sua posição x como a coordenada x do mouse menos metade da largura da imagem, e sua posição y como a coordenada y do mouse menos metade da altura da imagem. Para isso, adicionei o seguinte trecho ao código:
