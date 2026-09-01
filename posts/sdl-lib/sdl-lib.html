@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca SDL</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>୨୧ computação visual</h1>
+
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../../posts.html">Posts</a>
+            <a href="../../sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+
+    <main class="post-page">
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <span class="post-category">
+                    SDL
+                </span>
+
+                <h1>
+                    Biblioteca SDL
+                </h1>
+
+                <p class="post-date">
+                    01 de setembro de 2026
+                </p>
+
+            </div>
+
+
+            <div class="post-cover">
+                ୨୧
+            </div>
+
+
+            <div class="post-body">
+
+                <p>
+                    No conteúdo disponibilizado para a aula, aprendemos a configurar e utilizar a biblioteca SDL, que
+                    segundo a documentação:
+                </p>
+
+                <div class="post-highlight">
+
+                    <strong>SDL:</strong>
+
+                    A SDL (Simple DirectMedia Layer) é uma biblioteca multimídia e multiplataforma escrita em C que
+                    fornece acesso de baixo nível a áudio, teclado, mouse, joystick e hardware gráfico
+                </div>
+
+                <p>
+                    É uma lib utilizada em diversos jogos e animações. A partir do código do GitHub da aula (e depois de
+                    um certo sufoco pra configurar no meu VSCode), consegui fazer um Hello World, que é basicamente uma
+                    tela preta com as configurações estabelecidas.
+                </p>
+
+                <img src="/posts/sdl-lib/img/hello.png">
+
+
+                <p>
+                    Depois disso, mexemos com a SDL_renderer para trocar a cor do fundo para cinza e desenhar 3 linhas
+                    com as cores vermelha, verde e azul. Para isso, usamos <strong>SDL_SetRenderDrawColor()</strong>,
+                    onde o primeiro número são os níveis de vermelho, o segundo são os níveis de verde e o terceiro, o
+                    azul. O quarto valor é o canal alpha, relacionado à transparência. Como queremos um fundo cinza, os
+                    níveis devem ser iguais para todas as cores. Para cada cor, colocamos o nível máximo na cor desejada (255) e o
+                    restante se torna 0. Conseguimos esse resultado:
+                </p>
+
+                <img src="/posts/sdl-lib/img/sdl-renderer.png">
+
+                <p>
+                    Usamos também a biblioteca SDL_image para carregar 3 imagens em diferentes formatos: .bmp, .png e .jpg. Elas são carregadas como texturas, o que quer dizer que não manipulamos diretamente os pixels da imagem. O interessante é que podemos definir o local onde elas aparecem na janela. Como desafio, tentei fazer com que a imagem .jpg se movesse junto com o cursor do mouse.
+                </p>
+
+                <img src="/posts/sdl-lib/img/sdl-image.gif">
+
+                <p>
+                    Como o código já possuía <strong>SDL_EVENT_MOUSE_MOTION</strong> com as coordenadas x e y do cursor, para que a imagem ficasse centralizada, defini sua posição x como a coordenada x do mouse menos metade da largura da imagem, e sua posição y como a coordenada y do mouse menos metade da altura da imagem. Para isso, adicionei o seguinte trecho ao código:
+                </p>
+
+                <pre><code>
+                    jpgRect.x = event.motion.x - jpgRect.w / 2.0f;
+                    jpgRect.y = event.motion.y - jpgRect.h / 2.0f;
+                </code></pre>
+
+                <p>
+                    E essa foi minha primeira experiência com o SDL :)
+                </p>
+
+                <a href="../../index.html" class="back-link">
+                    ← Voltar para o início
+                </a>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <footer>
+        <p>
+            made with ♡ and pixels • bruna soncini • 2026
+        </p>
+    </footer>
+
+</body>
+
+</html>

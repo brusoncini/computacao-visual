@@ -1,5 +1,14 @@
 [
     {
+        "id": 3,
+        "titulo": "Biblioteca SDL",
+        "categoria": "SDL",
+        "descricao": "Primeiro contato com a biblioteca SDL.",
+        "dataPublicacao": "2026-09-01",
+        "icone": "୨୧",
+        "link": "posts/sdl-lib/sdl-lib.html"
+    },
+    {
         "id": 2,
         "titulo": "Olho Humano e Visão",
         "categoria": "Percepção Visual",

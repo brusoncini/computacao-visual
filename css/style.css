@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-
-/* -------------------- */
 /* VARIÁVEIS */
-/* -------------------- */
 
 :root {
     --background: #fff7fb;
@@ -33,9 +30,7 @@
 }
 
 
-/* -------------------- */
 /* CONFIGURAÇÕES GERAIS */
-/* -------------------- */
 
 * {
     box-sizing: border-box;
@@ -74,9 +69,7 @@ h3 {
 }
 
 
-/* -------------------- */
 /* HEADER */
-/* -------------------- */
 
 header {
     display: flex;
@@ -100,9 +93,7 @@ header h1 {
 }
 
 
-/* -------------------- */
 /* MENU */
-/* -------------------- */
 
 nav {
     display: flex;
@@ -124,9 +115,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* HERO */
-/* -------------------- */
 
 .hero {
     min-height: 65vh;
@@ -156,9 +145,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* TAG */
-/* -------------------- */
 
 .tag {
     padding: 8px 16px;
@@ -173,9 +160,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* BOTÃO */
-/* -------------------- */
 
 .button {
     display: inline-block;
@@ -204,9 +189,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* SEÇÃO DE POSTS */
-/* -------------------- */
 
 .posts-section {
     padding: 80px 8%;
@@ -233,9 +216,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* LISTA DOS POSTS */
-/* -------------------- */
 
 .posts-grid {
     display: flex;
@@ -253,9 +234,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* CARD */
-/* -------------------- */
 
 .post-card {
     width: 100%;
@@ -282,9 +261,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* IMAGEM DO CARD */
-/* -------------------- */
 
 .post-image {
     height: 190px;
@@ -302,9 +279,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* CONTEÚDO DO CARD */
-/* -------------------- */
 
 .post-content {
     padding: 24px;
@@ -367,9 +342,7 @@ nav a:hover {
 }
 
 
-/* -------------------- */
 /* FOOTER */
-/* -------------------- */
 
 footer {
     padding: 30px 20px;
@@ -390,9 +363,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* PÁGINA DE POST */
-/* -------------------- */
 
 .post-page {
     padding: 70px 20px 100px;
@@ -511,9 +482,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* DESTAQUE DO POST */
-/* -------------------- */
 
 .post-highlight {
     margin: 35px 0;
@@ -535,9 +504,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* VOLTAR */
-/* -------------------- */
 
 .back-link {
     display: inline-block;
@@ -558,9 +525,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* PÁGINA DE POSTS */
-/* -------------------- */
 
 .posts-page {
     min-height: 80vh;
@@ -604,9 +569,7 @@ footer p {
 }
 
 
-/* -------------------- */
 /* PÁGINA SOBRE */
-/* -------------------- */
 
 .about-page {
     min-height: 80vh;
@@ -716,10 +679,7 @@ footer p {
     line-height: 1.7;
 }
 
-
-/* -------------------- */
 /* RESPONSIVIDADE */
-/* -------------------- */
 
 @media (max-width: 900px) {
 
