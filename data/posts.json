@@ -1,4 +1,13 @@
 [
+        {
+        "id": 4,
+        "titulo": "Filtros de Imagem",
+        "categoria": "Imagens",
+        "descricao": "O que é e como é feito um filtro de imagem.",
+        "dataPublicacao": "2026-09-15",
+        "icone": "❀",
+        "link": "posts/filtrar-imagens/filtrar-imagens.html"
+    },
     {
         "id": 3,
         "titulo": "Biblioteca SDL",

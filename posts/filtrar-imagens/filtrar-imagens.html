@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filtros de Imagem</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>୨୧ computação visual</h1>
+
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../../posts.html">Posts</a>
+            <a href="../../sobre.html">Sobre</a>
+        </nav>
+    </header>
+
+
+    <main class="post-page">
+
+        <article class="post">
+
+            <div class="post-header">
+
+                <span class="post-category">
+                    Imagens
+                </span>
+
+                <h1>
+                    Filtros de Imagem
+                </h1>
+
+                <p class="post-date">
+                    15 de setembro de 2026
+                </p>
+
+            </div>
+
+
+            <div class="post-cover">
+                ❀
+            </div>
+
+
+            <div class="post-body">
+
+                <p>
+                    Na aula dessa semana, descobrimos o que é um filtro de imagem e como conseguimos modificar uma imagem usando apenas cálculos!
+                </p>
+
+                <p>
+                    Mas o que é um filtro?
+                    Na verdade, um filtro de imagem é nada mais do que uma operação matemática aplicada aos pixels para modificar seu visual (cor, brilho, nitidez, nível de detalhes...).
+                </p>
+
+                <p>
+                    Existem filtros que trabalham analisando cada pixel individual e
+                    outros que analisam também seus vizinhos. Os filtros espaciais,
+                    utilizados aqui, fazem suas operações diretamente nos pixels da
+                    imagem.
+                </p>
+
+                <div class="post-highlight">
+                    Usei a imagem abaixo para aplicar as modificações com o SDL conforme visto nas aulas gravadas:
+                    <img src="img/cupcake.png">
+                </div>
+
+
+                <p>
+                    <strong>Inverter imagem:</strong>
+                </p>
+
+                <p>
+                    Esse é um dos filtros mais simples, pois não depende dos pixels vizinhos.
+                    A alteração é feita individualmente em cada pixel, substituindo cada canal
+                    de cor pelo seu valor complementar, ou seja, o inverso.
+                </p>
+
+                <p>
+                    Como cada canal RGB possui valores entre 0 e 255, a inversão é feita
+                    utilizando:
+                </p>
+
+                <p>
+                    R' = 255 - R<br>
+                    G' = 255 - G<br>
+                    B' = 255 - B
+                </p>
+
+                <p>
+                    Dessa forma, uma cor clara se torna escura e vice-versa, e as cores são transformadas em sua complementar. O resultado parece um pouco um negativo de fotografia.
+                </p>
+
+                <img src="img/cupcake-invertido.png">
+
+                <p>
+                    <strong>Tons de cinza:</strong>
+                </p>
+
+                <p>
+                    A transformação para tons de cinza também funciona pixel a pixel. Como uma
+                    imagem colorida possui três componentes (vermelho, verde e azul), precisamos
+                    transformar esses três valores em apenas um valor de intensidade.
+                </p>
+
+                <p>
+                    Essa intensidade é calculada utilizando uma média ponderada dos canais RGB, que é a seguinte:
+                </p>
+
+                <p>
+                    Cinza = 0.299R + 0.587G + 0.114B
+                </p>
+
+                <p>
+                    Os pesos são diferentes porque o olho humano possui maior sensibilidade ao
+                    verde e menor sensibilidade ao azul. Depois de calcular, o mesmo valor é usado
+                    nos três canais, formando uma imagem em escala de cinzas.
+                </p>
+
+                <img src="img/cupcake-cinza.png">
+
+                <p>
+                    <strong>Threshold / Preto e Branco:</strong>
+                </p>
+
+                <p>
+                    Esse sim é verdadeiramente preto e branco! O threshold também utiliza a intensidade do pixel, mas ao invés de manter vários níveis de cinza, ele transforma a imagem em apenas dois valores: preto ou branco.
+                </p>
+
+                <p>
+                    Primeiro, calculamos a intensidade do pixel. Depois comparamos esse valor com um limite (daí vem o nome threshold). Se o valor for maior que o limite, o
+                    pixel recebe branco; senão, recebe preto.
+                </p>
+
+                <p>
+                    Exemplo, usando 128 (um cinza médio) como limite:
+                </p>
+
+                <p>
+                    Intensidade > 128 → branco (255)<br>
+                    Intensidade ≤ 128 → preto (0)
+                </p>
+
+                <img src="img/cupcake-threshold.png">
+
+                <p>
+                    <strong>Eliminar ruído / desfocar imagem:</strong>
+                </p>
+
+                <p>
+                    Esse filtro é conhecido como filtro passa-baixa. Ele analisa uma região ao
+                    redor de cada pixel e substitui seu valor pela média dos pixels vizinhos.
+                </p>
+
+                <p>
+                    Ele tem o nome passa-baixa porque o filtro remove principalmente altas frequências da imagem, que correspondem a mudanças rápidas de
+                    intensidade, como bordas e pequenos detalhes. Quanto maior a região analisada, maior será o efeito de desfoque.
+                </p>
+
+                <img src="img/cupcake-blur.png">
+
+                <p>
+                    <strong>Realçar detalhes / Passa-alta:</strong>
+                </p>
+
+                <p>
+                    O filtro passa-alta realiza o processo contrário ao passa-baixa. Enquanto o
+                    blur suaviza as diferenças entre pixels próximos, o passa-alta destaca essas diferenças. Para isso, utilizamos uma máscara que dá maior peso ao pixel
+                    central e pesos negativos aos pixels vizinhos:
+                </p>
+
+                <p>
+                    -1 -1 -1<br>
+                    -1 8 -1<br>
+                    -1 -1 -1
+                </p>
+
+                <p>
+                    Regiões uniformes possuem pouca variação e acabam sendo removidas, enquanto
+                    mudanças bruscas de intensidade são destacadas. Por isso, o resultado é uma
+                    imagem com bordas e detalhes realçados.
+                </p>
+
+                <img src="img/cupcake-passaalta.png">
+
+                <p>
+                    Criar esse post me ajudou a entender melhor como a computação visual consegue
+                    transformar números e cálculos em algo que conseguimos enxergar. No final, uma imagem é um conjunto de dados que pode ser manipulado de várias formas diferentes.
+                </p>
+
+                <a href="../../index.html" class="back-link">
+                    ← Voltar para o início
+                </a>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <footer>
+        <p>
+            made with ♡ and pixels • bruna soncini • 2026
+        </p>
+    </footer>
+
+</body>
+
+</html>
