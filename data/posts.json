@@ -1,38 +1,47 @@
 [
-        {
-        "id": 4,
-        "titulo": "Filtros de Imagem",
-        "categoria": "Imagens",
-        "descricao": "O que é e como é feito um filtro de imagem.",
-        "dataPublicacao": "2026-09-15",
-        "icone": "❀",
-        "link": "posts/filtrar-imagens/filtrar-imagens.html"
-    },
-    {
-        "id": 3,
-        "titulo": "Biblioteca SDL",
-        "categoria": "SDL",
-        "descricao": "Primeiro contato com a biblioteca SDL.",
-        "dataPublicacao": "2026-09-01",
-        "icone": "୨୧",
-        "link": "posts/sdl-lib/sdl-lib.html"
-    },
-    {
-        "id": 2,
-        "titulo": "Olho Humano e Visão",
-        "categoria": "Percepção Visual",
-        "descricao": "Um pouco de como enxergamos luz e cores e reflexões.",
-        "dataPublicacao": "2026-08-16",
-        "icone": "♡",
-        "link": "posts/olho-humano-e-visao.html"
-    },
-    {
-        "id": 1,
-        "titulo": "Computação Visual?",
-        "categoria": "Reflexão",
-        "descricao": "Minhas ideias e primeiras impressões sobre o que é computação visual.",
-        "dataPublicacao": "2026-08-16",
-        "icone": "✦",
-        "link": "posts/o-que-eh.html"
-    }
+  {
+    "id": 5,
+    "titulo": "Detecção de Bordas",
+    "categoria": "Bordas",
+    "descricao": "Como funciona a detecção de bordas em uma imagem.",
+    "dataPublicacao": "2026-09-29",
+    "icone": "ꕤ",
+    "link": "posts/bordas/bordas.html"
+  },
+  {
+    "id": 4,
+    "titulo": "Filtros de Imagem",
+    "categoria": "Imagens",
+    "descricao": "O que é e como é feito um filtro de imagem.",
+    "dataPublicacao": "2026-09-15",
+    "icone": "❀",
+    "link": "posts/filtrar-imagens/filtrar-imagens.html"
+  },
+  {
+    "id": 3,
+    "titulo": "Biblioteca SDL",
+    "categoria": "SDL",
+    "descricao": "Primeiro contato com a biblioteca SDL.",
+    "dataPublicacao": "2026-09-01",
+    "icone": "୨୧",
+    "link": "posts/sdl-lib/sdl-lib.html"
+  },
+  {
+    "id": 2,
+    "titulo": "Olho Humano e Visão",
+    "categoria": "Percepção Visual",
+    "descricao": "Um pouco de como enxergamos luz e cores e reflexões.",
+    "dataPublicacao": "2026-08-16",
+    "icone": "♡",
+    "link": "posts/olho-humano-e-visao.html"
+  },
+  {
+    "id": 1,
+    "titulo": "Computação Visual?",
+    "categoria": "Reflexão",
+    "descricao": "Minhas ideias e primeiras impressões sobre o que é computação visual.",
+    "dataPublicacao": "2026-08-16",
+    "icone": "✦",
+    "link": "posts/o-que-eh.html"
+  }
 ]
