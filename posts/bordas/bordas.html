@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Filtros de Imagem</title>
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>୨୧ computação visual</h1>
+
+      <nav>
+        <a href="../../index.html">Início</a>
+        <a href="../../posts.html">Posts</a>
+        <a href="../../sobre.html">Sobre</a>
+      </nav>
+    </header>
+
+    <main class="post-page">
+      <article class="post">
+        <div class="post-header">
+          <span class="post-category"> Bordas </span>
+
+          <h1>Detecção de Bordas</h1>
+
+          <p class="post-date">29 de setembro de 2026</p>
+        </div>
+
+        <div class="post-cover">ꕤ</div>
+
+        <div class="post-body">
+          <p>
+            Depois de estudar um pouco sobre filtros de imagem, deu pra perceber
+            que vários deles funcionam seguindo praticamente a mesma ideia:
+            pegar uma pequena região da imagem, analisar os pixels vizinhos e
+            fazer alguma operação com eles.
+          </p>
+
+          <p>
+            No blur, por exemplo, queremos deixar as diferenças entre os pixels
+            mais suaves. Mas se fizermos o contrário e procurarmos os lugares
+            onde essas diferenças são maiores, encontramos uma
+            <strong>borda</strong>!
+          </p>
+
+          <div class="post-highlight">
+            <strong>Detecção de bordas:</strong>
+            técnica utilizada para encontrar regiões de uma imagem onde existe
+            uma mudança brusca de intensidade, normalmente indicando o limite
+            entre duas regiões ou o contorno de algum objeto.
+          </div>
+
+          <h3>O que é uma borda?</h3>
+
+          <p>
+            Em uma imagem em tons de cinza, cada pixel possui um valor de
+            intensidade. Quanto mais próximo de 0, mais escuro ele é, e quanto
+            mais próximo de 255, mais claro.
+          </p>
+
+          <p>Por exemplo, temos os pixels:
+            <strong>20   22   24   230   235   240</strong>
+          </p>
+
+          <p>
+            Entre 20, 22 e 24 praticamente não aconteceu nada, mas de 24 pra 230
+            temos uma grande mudança. É aí que podemos supor que alguma coisa 
+            mudou na imagem nessa região.
+        </p>
+
+          <h3>Filtro de sobel</h3>
+
+          <p>
+            Uma das formas mais conhecidas de procurar essas mudanças é
+            utilizando o <strong>operador de Sobel</strong>.
+            Ele tenta descobrir o quanto os valores dos pixels estão mudando na imagem. Uma
+            mudança grande no gradiente pode indicar uma borda.
+          </p>
+
+          <p>
+            Para isso, utilizamos duas matrizes 3 x 3, também chamadas de
+            <strong>kernels</strong> ou <strong>máscaras</strong>.
+          </p>
+
+          <p>
+            O <strong>Gx</strong> observa principalmente mudanças de intensidade
+            no eixo X (esquerda/direita), enquanto o <strong>Gy</strong> faz isso no eixo Y (cima/baixo).
+            O Sobel utiliza os dois resultados para analisar as bordas da imagem.
+          </p>
+
+          <p>
+            Aqui, eu usei o GIMP para transformar nosso querido cupcake com a opção de filtro Sobel.
+            Primeiro, a imagem foi passada para tons de cinza e desfocada com o blur Gaussiano, 
+            e depois apliquei o filtro.
+          </p>
+
+          <img src="img/cupcake.png">
+          <img src="img/cupcake-sobel.png">
+
+          <p>O Sobel também utiliza <strong>convolução</strong>.</p>
+            Pegamos uma região de 3 x 3 pixels da imagem e colocamos o kernel
+            sobre ela. Depois, cada pixel é multiplicado pelo valor
+            correspondente na matriz e todos os resultados são somados.
+          </p>
+
+          <h3>Juntando Gx e Gy</h3>
+
+          <p>
+            Depois de calcular as mudanças nas duas direções, precisamos juntar
+            os resultados. Uma maneira de calcular a magnitude do gradiente é: 
+            <strong>G = √(Gx² + Gy²)</strong>
+        </p>          
+
+          <p>
+            Quanto maior for o valor de <strong>G</strong>, maior é a variação
+            encontrada naquela região. Depois disso, esses valores podem ser convertidos novamente para
+            valores de pixels.
+          </p>
+
+          <p>
+            As regiões com pouca variação ficam mais escuras e as regiões onde
+            foram encontradas mudanças fortes aparecem mais claras.
+          </p>
+
+         <img src="img/cupcake-gx.png">
+         <p>Gx</p>
+         <img src="img/cupcake-gy.png">
+         <p>Gy</p>
+
+        <p>
+            O Gx e o Gy mostram partes diferentes da imagem, porque cada um procura variações em uma direção. 
+            Quando os dois são combinados, o resultado final consegue representar melhor os contornos do cupcake.
+        </p>
+
+          <h3>Antes do Sobel</h3>
+
+          <p>
+            Aqui, temos um problema: o algoritmo não sabe diferenciar uma borda
+            de verdade de qualquer outra pequena variação na imagem, por exemplo, um ruído.
+          </p>
+
+          <p>
+            Por isso, é comum aplicar um blur antes de procurar as bordas. A
+            documentação do GIMP inclusive recomenda que, em muitos casos, seja
+            feito algum tipo de suavização antes dos filtros de borda para
+            evitar essas bordas falsas.
+          </p>
+
+          <p>Então o processo fica mais ou menos assim:</p>
+
+            <img src="img/cupcake.png">
+            <p>Imagem original</p>
+            <img src="img/cupcake-cinza.png">
+            <p>Imagem em tons de cinza</p>
+            <img src="img/cupcake-blur.png">
+            <p>Imagem com blur Gaussiano</p>
+            <img src="img/cupcake-sobel.png">
+            <p>Imagem com filtro Sobel</p>
+
+          <p>
+            Encontrar contornos pode ser uma etapa usada em tarefas maiores de
+            processamento de imagens e visão computacional, porque ajuda a
+            destacar formas e separar regiões da imagem.
+          </p>
+
+          <p>
+            O mais legal no Sobel é perceber que os conteúdos começam a se conectar:
+            usamos tons de cinza, o blur e o Sobel, com objetivos completamente diferentes,
+            e ainda assim eles funcionam bem juntos.
+          </p>
+
+          <h3>Referências</h3>
+            <li>GIMP Documentation — Edge-Detect Filters e Sobel.</li>
+          </ul>
+
+          <a href="../../index.html" class="back-link">
+            ← Voltar para o início
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>made with ♡ and pixels • bruna soncini • 2026</p>
+    </footer>
+  </body>
+</html>
