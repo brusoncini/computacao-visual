@@ -1,4 +1,13 @@
 [
+    {
+    "id": 6,
+    "titulo": "Transformadas de Fourier",
+    "categoria": "Fourier",
+    "descricao": "O que são e pra que servem as transformadas de Fourier.",
+    "dataPublicacao": "2026-10-13",
+    "icone": "⌗",
+    "link": "posts/fourier/fourier.html"
+  },
   {
     "id": 5,
     "titulo": "Detecção de Bordas",

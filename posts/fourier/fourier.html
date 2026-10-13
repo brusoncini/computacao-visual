@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Transformadas de Fourier</title>
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>୨୧ computação visual</h1>
+
+      <nav>
+        <a href="../../index.html">Início</a>
+        <a href="../../posts.html">Posts</a>
+        <a href="../../sobre.html">Sobre</a>
+      </nav>
+    </header>
+
+    <main class="post-page">
+      <article class="post">
+        <div class="post-header">
+          <span class="post-category"> Fourier </span>
+
+          <h1>Transformadas de Fourier</h1>
+
+          <p class="post-date">13 de outubro de 2026</p>
+        </div>
+
+        <div class="post-cover">⌗</div>
+
+        <div class="post-body">
+          <p>
+            Em sala de aula e nos materiais de aula, foi passado conteúdo sobre as Transformadas de Fourier.
+            Eu admito que matemática não é o meu forte, mas gosto de ler sobre, às vezes. 
+            Daí eu me deparei com aquela equação grande e esquisita e quase desisti.
+          </p>
+
+          <img src="img/equacoes.png">
+
+          <p>
+            Sério, o que significa isso? Até agora eu não sei, mas aqui vão algumas coisas que eu consegui aprender.
+            Todas as referências que usei estarão no final da página.
+          </p>
+
+          <div class="post-highlight">
+            Achei a explicação mais simples sobre o que são as Transformadas de Fourier 
+            <a href="https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/" target="_blank">aqui</a>: 
+            dado um smoothie, ela encontra a receita. <strong>Como?</strong> Colocando o smoothie em um "filtro", separando cada ingrediente. 
+            <strong>Por quÊ?</strong> Receitas são mais fáceis de analisar, comparar e modificar do que o smoothie já pronto.
+          </div>
+
+          <p>
+            Basicamente, é uma maneira de dividir alguma coisa em várias ondas senoidais. E o que é uma frequência? 
+            Uma onda que oscila devagar tem frequência baixa; uma que oscila rapidamente tem frequência alta. 
+            A Transformada de Fourier ajuda a descobrir quais frequências existem em um sinal e quanto de cada uma existe.
+          </p>
+
+          <p>
+            Quando usamos epiciclos para visualizar essas frequências, podemos imaginar cada componente como um ponto girando em um círculo. 
+            Cada círculo tem seu próprio tamanho, velocidade e posição inicial. 
+            Quando juntamos vários deles, o movimento da ponta final consegue formar desenhos bem complexos. 
+            E com isso, podemos fazer várias coisas legais.
+          </p>
+          
+          <img src="img/onda.png">
+
+          <p>
+            <a href="https://www.jezzamon.com/fourier/pt-br.html" target="_blank">Nesse site</a>,
+            tem uma parte legal pra você brincar com desenhos e ele recria sua obra de arte
+            com esses círculos, se movendo um dentro do outro:
+          </p>
+
+          <img src="img/desenho.gif">
+
+          <p>
+            Eu fiz esse cachorro bugado (difícil desenhar no mouse!). Quanto mais círculos ele adiciona, mais fiel fica a imagem que eu desenhei,
+            mas como dá pra ver, com menos da metade da barrinha o desenho já estava quase 100% fiel. Isso é bem útil para compressão, por exemplo, de imagens e sons.
+          </p>
+
+          <p>
+            Fourier também permite sair do domínio espacial (pixels e suas posições) 
+            para o domínio da frequência. Regiões de baixa frequência costumam representar mudanças suaves da imagem, 
+            enquanto frequências mais altas estão associadas a mudanças bruscas, como detalhes e bordas.
+          </p>
+
+          <p>
+            É bem estranho pensar que, de uma equação assustadora como aquela, podemos tirar tantas informações. 
+            Mas isso também é legal demais!
+          </p>
+
+          <h3>Referências</h3>
+            <li>https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/</li>
+            <li>https://www.jezzamon.com/fourier/pt-br.html</li>
+          </ul>
+
+          <a href="../../index.html" class="back-link">
+            ← Voltar para o início
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>made with ♡ and pixels • bruna soncini • 2026</p>
+    </footer>
+  </body>
+</html>
