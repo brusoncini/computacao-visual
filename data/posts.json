@@ -1,5 +1,14 @@
 [
-    {
+  {
+    "id": 7,
+    "titulo": "Aliasing e anti-aliasing",
+    "categoria": "Aliasing",
+    "descricao": "O que é aliasing e como evitar.",
+    "dataPublicacao": "2026-10-27",
+    "icone": "⋆  ˚₊",
+    "link": "posts/aliasing/aliasing.html"
+  },
+  {
     "id": 6,
     "titulo": "Transformadas de Fourier",
     "categoria": "Fourier",
