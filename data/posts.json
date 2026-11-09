@@ -1,4 +1,13 @@
 [
+    {
+    "id": 8,
+    "titulo": "Reflexão final",
+    "categoria": "Reflexão",
+    "descricao": "O que aprendi na disciplina.",
+    "dataPublicacao": "2026-11-09",
+    "icone": "✦",
+    "link": "posts/reflexao-final.html"
+  },
   {
     "id": 7,
     "titulo": "Aliasing e anti-aliasing",
